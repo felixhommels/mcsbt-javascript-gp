@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector("#category-container input[type='text']")
     .addEventListener("input", searchProducts);
+
+  loadCart();
 });
 
 let allProducts = [];
@@ -38,7 +40,7 @@ function displayProducts(products) {
     }
 
     const card = document.createElement("div");
-    card.className = "col-4";
+    card.className = "col-12 col-sm-6 col-md-4";
     card.innerHTML = `
       <div class="card">
         <img src="${item.image}" class="card-img-top" alt="${item.name}">
@@ -99,6 +101,7 @@ function addToCart(productId, quantity) {
       });
     }
     updateCart();
+    saveCart();
   }
 }
 
@@ -132,6 +135,19 @@ function removeFromCart(productId) {
     } else {
       cart = cart.filter((item) => item.id !== productId);
     }
+    updateCart();
+    saveCart();
+  }
+}
+
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function loadCart() {
+  const savedCart = localStorage.getItem("cart");
+  if (savedCart) {
+    cart = JSON.parse(savedCart);
     updateCart();
   }
 }
