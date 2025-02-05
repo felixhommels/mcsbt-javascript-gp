@@ -42,7 +42,7 @@ nav {
 
 .nav-link {
   color: #f4d35e;
-  margin-right: 10px;
+  margin-right: 20px;
   font-size: 1.5rem;
 }
 
@@ -126,4 +126,21 @@ nav {
 
 .btn-primary:hover {
   background-color: #c83a5e;
+}
+
+#clear-filter {
+  background-color: #f4d35e;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: #fff;
+}
+
+#cart-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+#total {
+  font-weight: bold;
 }

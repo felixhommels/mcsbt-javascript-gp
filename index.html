@@ -39,17 +39,39 @@
             </li>
           </ul>
           <button
-            id="cartButton"
-            class="btn btn-outline-secondary position-relative ms-auto"
+            class="btn btn-primary"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
           >
-            <i class="bi bi-cart"></i> Cart
-            <span
-              id="cartItemCount"
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-            >
-              0
-            </span>
+            Shopping Cart
           </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasRight"
+            aria-labelledby="offcanvasRightLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">Shopping Cart</h5>
+              <button
+                type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul id="cart-items">
+                <!-- Insert items here with JS -->
+              </ul>
+              <p id="total">Total: $0.00</p>
+              <button class="btn btn-primary" id="checkout-button">
+                Proceed to Checkout
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -64,18 +86,21 @@
       <!-- Main content here with bar on the left and products on the right -->
       <div class="row" id="category-container">
         <div class="col-2">
-          <button>Toys</button>
+          <button class="category-button">Toys</button>
         </div>
         <div class="col-2">
-          <button>Grooming Products</button>
+          <button class="category-button">Grooming Products</button>
         </div>
         <div class="col-2">
-          <button>Textiles</button>
+          <button class="category-button">Textiles</button>
         </div>
         <div class="col-2">
-          <button>Food & Nutrition</button>
+          <button class="category-button">Food & Nutrition</button>
         </div>
-        <div class="col-4">
+        <div class="col-1">
+          <button id="clear-filter">Clear Filter</button>
+        </div>
+        <div class="col-3">
           <p><input type="text" placeholder="Search" /></p>
         </div>
       </div>
