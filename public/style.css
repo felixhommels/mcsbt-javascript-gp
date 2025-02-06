@@ -1,0 +1,42 @@
+:root {
+  --bs-primary: #2E4057;
+  --bs-secondary: #F4D35E;
+  --bs-success: #083D77;
+  --bs-danger: #DA4167;
+  --bs-warning: #F6D8AE;
+  --bs-info: #17a2b8;
+  --bs-light: #f8f9fa;
+  --bs-dark: #343a40;
+  --bs-tertiary-bg: #2E4057;
+}
+
+.btn-danger {
+  background-color: var(--bs-danger);
+  border-color: var(--bs-danger);
+}
+
+.btn-outline-danger {
+  border-color: var(--bs-danger);
+}
+
+.btn-outline-danger:hover {
+  color: #fff;
+  background-color: var(--bs-danger);
+}
+
+.sticky-top{
+  top:56px;
+}
+
+.carousel-caption > h5, .carousel-caption > p {
+  color: #fff;
+  text-shadow: #333 1px 1px 1px;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#category-container {
+  background-color: var(--bs-tertiary-bg);
+}
